@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            font-family: arial;
+        }
+
+        body > p {
+            text-align: center;
+            font-size: 50px;
+            margin-top: 10px;
+            background-color: lightblue;
+            padding: 10px;
+        }
+
+        form {
+            margin-top: 10px;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        input {
+            margin-top: 20px;
+        }
+
+        .botao {
+            background-color: lightblue;
+            font-size: 15px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <p>Calculando nível</p>
+    <form method="post">
+        <p><label for="guess">Digite a quantidade de XP do seu personagem: </label>
+        {% csrf_token %}
+        <input type="text" name="guess" size="40" id="guess"/></p>
+        <input type="submit" class="botao"/>
+    </form>
+</body>
+</html>

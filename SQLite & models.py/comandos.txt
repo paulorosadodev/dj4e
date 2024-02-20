@@ -1,0 +1,43 @@
+// (NUNCA ESQUECER DE UTILIZAR 'WHERE' SENÃO O COMANDO AFETARÁ TODA A TABELA DO BANCO DE DADOS) //
+
+sqlite3 zip.sqlite3 // (CRIA UM ARQUIVO SQL CHAMADO 'zip.sqlite3')
+
+Exit with ".quit", statements end with a semicolon.
+
+.mode column // (FACILITA A VISUALIZAÇÃO)
+
+CREATE TABLE "Users" (
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE, // (A DB GERA UM ID)
+    "name" TEXT,
+    "email" TEXT
+);
+
+.tables // (VISUALIZA TODAS AS TABELAS)
+
+.schema Users // (MOSTRA COMO FOI CRIADA A TABELA 'Users')
+
+INSERT INTO Users (name, email) VALUES ('Kristen', 'kf@umich.edu');
+INSERT INTO Users (name, email) VALUES ('Chuck', 'csev@umich.edu');
+INSERT INTO Users (name, email) VALUES ('Colleen', 'cvl@umich.edu');
+INSERT INTO Users (name, email) VALUES ('Ted', 'ted@umich.edu');
+INSERT INTO Users (name, email) VALUES ('Sally', 'a1@umich.edu');
+
+SELECT * FROM Users; // (VISUALIZA TODAS AS COLUNAS DA TABELA 'Users')
+
+DELETE FROM Users WHERE email='ted@umich.edu'; // (DELETA TODOS OS ELEMENTOS DA TABELA 'Users' QUE TENHAM O EMAIL 'ted@umich.edu')
+
+SELECT * FROM Users;
+
+UPDATE Users SET name="Charles" WHERE email='csev@umich.edu'; // (MUDA O NOME DE TODOS OS ELEMENTOS QUE TENHAM O EMAIL 'csev@umich.edu')
+
+SELECT * FROM Users;
+
+SELECT * FROM Users WHERE email='csev@umich.edu'; // (VISUALIZA TODOS OS ELEMENTOS QUE TENHAM O EMAIL 'csev@umich.edu')
+
+SELECT * FROM Users ORDER BY email; // (VISUALIZA TODOS OS ELEMENTOS POR ORDEM DE EMAIL)
+
+SELECT * FROM Users ORDER BY name DESC; // (VISUALIZA TODOS OS ELEMENTOS POR ORDEM DECRESCENTE DE NOME)
+
+If you want: DROP TABLE Users; 
+
+.quit
